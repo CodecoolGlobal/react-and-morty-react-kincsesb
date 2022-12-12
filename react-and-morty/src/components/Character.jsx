@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import 'reactjs-popup/dist/index.css';
+import Popup from 'reactjs-popup';
 
 function Character(props) {
 
@@ -7,6 +9,7 @@ function Character(props) {
     let image = props.image
     let name = props.name
     let species = props.species
+    let handleClick = props.handleClick
 
 
         let location = props.location.name
@@ -20,13 +23,15 @@ function Character(props) {
             <img src={image}></img>
             <h4>{name}</h4>
             <p>{species}</p>
-            <button onClick={() => setCount(!count)}>More Information</button>
-            <div className={count === false ? "displaynone" : "displayflex"}>
-            <p>Location: {location}</p>
-            <p>Status: {status}</p>
-            <p>Gender: {gender}</p>
-            <p>Oirgin: {origin}</p>
-            </div>
+            <Popup trigger={<button >More Information</button>} position="center">
+                
+                <div>
+                <p>Location: {location}</p>
+                <p>Status: {status}</p>
+                <p>Gender: {gender}</p>
+                <p>Oirgin: {origin}</p>
+                </div>
+            </Popup>
         </div>
     )
 }
