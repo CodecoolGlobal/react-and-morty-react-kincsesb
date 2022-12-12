@@ -3,8 +3,9 @@ import "./App.css";
 import { useCharacters, useLocations } from "./api/useData";
 
 function App() {
+  let page = 1;
   const characters = useCharacters(1);
-  const locations = useLocations(1);
+  const locations = useLocations(page);
 
   const listLocations = () => {
     return locations.results.map((location) => (
@@ -13,6 +14,18 @@ function App() {
         <div className="location-type">{location.type}</div>
       </div>
     ));
+  };
+
+  const pagination = () => {
+    return (
+      <div className="pagination">
+        {page > 1 ? (
+          <button className="pagination-button">Previous Page</button>
+        ) : null}
+        <span className="page">Page {page}</span>
+        <button className="pagination-button">Next Page</button>
+      </div>
+    );
   };
 
   console.log("Characters data: ");
@@ -24,6 +37,7 @@ function App() {
     <>
       <div className="App">Take a look at the console! (F12)</div>
       {listLocations()}
+      {pagination()}
     </>
   );
 }
