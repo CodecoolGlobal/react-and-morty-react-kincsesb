@@ -1,17 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { useCharacters, useLocations } from "./api/useData";
+import CharactersTable from "./components/CharactersTable";
+import { useState } from "react";
 
 function App() {
-  const characters = useCharacters(1);
-  const locations = useLocations(1);
 
-  console.log("Characters data: ");
-  console.log(characters);
-  console.log("Locations data: ");
-  console.log(locations);
+  const [page,setPage] = useState(1)
 
-  return <div className="App">Take a look at the console! (F12)</div>;
+  const characters = useCharacters(page);
+  const locations = useLocations(page);
+
+
+  console.log(characters)
+  // useEffect(() => {
+  //   async function load() {
+  //     const characters = useCharacters(page)
+  //   }
+  //   load();
+  // }, [page]);
+
+
+  return (
+  <div>
+  <button>Characters</button>
+  {characters !== "Loading..." ? <CharactersTable data={characters.results}/> : <p>Loading...</p>}
+  <button onClick={() => setPage((page) => page - 1)} disabled={page < 2}>Previous Page</button>
+  <button onClick={() => setPage((page) => page + 1)}>Next Page</button>
+  </div>
+  )
 }
 
 export default App;

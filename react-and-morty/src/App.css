@@ -1,0 +1,24 @@
+.charactersTable {
+    display: grid;
+    margin: 60px;
+    column-gap: 30px;
+    row-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.character {
+    width: 300px;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
+
+.displayflex {
+    display: block;
+}
+
+.displaynone {
+    display: none;
+}
