@@ -18,6 +18,7 @@ code {
   font-size: 20px;
   display:flex;
   flex-direction: row;
+  align-items: center;
   width: 400px;
   padding: 5px;
   animation: shake 0.5s;
