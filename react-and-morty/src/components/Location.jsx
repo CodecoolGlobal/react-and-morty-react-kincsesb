@@ -1,6 +1,6 @@
 import React from "react";
- import 'reactjs-popup/dist/index.css';
- import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import Popup from 'reactjs-popup';
 
 function Location(props) {
 
