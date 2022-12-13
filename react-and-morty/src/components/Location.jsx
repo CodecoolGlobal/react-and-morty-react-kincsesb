@@ -16,14 +16,16 @@ function Location(props) {
             
             <h4>{name}</h4>
             <p>{type}</p>
-            <Popup trigger={<button >More Information</button>} position="center">
-                
+            <Popup className={"popup"} trigger={<button >More Information</button>} position="center">
                 <div>
-                <p>Name: {name}</p>
-                <p>Type: {type}</p>
-                <p>Dimension: {dimension}</p>
-                
+                    <img src="https://freepngimg.com/thumb/rick_and_morty/27448-8-rick-and-morty-transparent.png" alt="" height="150px"/>
                 </div>
+                <div>
+                <h2 className="popup-title">{name}</h2>
+                <p><strong>Type: </strong>{type}</p>
+                <p><strong>Dimension: </strong> <br></br>{dimension}</p>
+                </div>
+                
             </Popup>
             
             
