@@ -1,6 +1,6 @@
 import React from "react";
-// import 'reactjs-popup/dist/index.css';
-// import Popup from 'reactjs-popup';
+ import 'reactjs-popup/dist/index.css';
+ import Popup from 'reactjs-popup';
 
 function Location(props) {
 
@@ -10,12 +10,13 @@ function Location(props) {
     let type = props.type
     let dimension = props.dimension
 
+
     return (
         <div className="location">
             
             <h4>{name}</h4>
             <p>{type}</p>
-            {/* <Popup trigger={<button >More Information</button>} position="center">
+            <Popup trigger={<button >More Information</button>} position="center">
                 
                 <div>
                 <p>Name: {name}</p>
@@ -23,7 +24,7 @@ function Location(props) {
                 <p>Dimension: {dimension}</p>
                 
                 </div>
-            </Popup> */}
+            </Popup>
             
             
         </div>
