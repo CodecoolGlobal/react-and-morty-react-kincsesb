@@ -4,6 +4,8 @@
     column-gap: 30px;
     row-gap: 30px;
     grid-template-columns: repeat(4, 1fr);
+    height: 1600px;
+    overflow-y: auto;
 }
 
 .character {

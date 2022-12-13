@@ -9,7 +9,7 @@ import { mainUrls } from "./dataRoutes.js";
      *
      * @param pageNum integer that gives the pagination page number. The json `info` property contains how many pages are.
      */
-export const useCharacters = (pageNum = 1) => {
+  export const useCharacters = (pageNum = 1) => {
   const [characters, setUrl] = useFetch(mainUrls.characters + pageNum);
   useEffect(() => {
     setUrl(mainUrls.characters + pageNum);
