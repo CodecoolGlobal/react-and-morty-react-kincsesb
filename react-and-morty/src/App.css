@@ -8,6 +8,16 @@
     overflow-y: auto;
 }
 
+.locationsTable {
+    display: grid;
+    margin: 60px;
+    column-gap: 30px;
+    row-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    height: 600px;
+    overflow-y: auto;
+}
+
 .character {
     width: 300px;
     display: block;
@@ -17,6 +27,15 @@
     background-color: lightgrey;
 }
 
+.location {
+    height: auto;
+    width: 300px;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
 .displayflex {
     display: block;
 }

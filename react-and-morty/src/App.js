@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { useCharacters, useLocations } from "./api/useData";
 import CharactersTable from "./components/CharactersTable";
-import Location  from "./components/Location";
+import LocationsTable from "./components/LocationsTable";
 import { useState } from "react";
 
 function App() {
@@ -14,7 +14,9 @@ function App() {
 
   const [toggle, setToggle] = useState(null)
 
-  const [array, setArray] = useState([])
+
+  const [charactersArray, setCharactersArray] = useState([])
+  const [locationsArray, setLocationsArray] = useState([])
 
 
   //console.log(characters)
@@ -24,24 +26,34 @@ function App() {
 
       if(characters !== 'Loading...'){
 
-        setArray([...array,...characters.results])
+        setCharactersArray([...charactersArray,...characters.results])
 
       }
     }
     load();
   }, [characters]);
 
+  useEffect(() => {
+    async function load() {
 
+      if(locations !== 'Loading...'){
+
+        setLocationsArray([...locationsArray,...locations.results])
+
+      }
+    }
+    load();
+  }, [locations]);
+
+  console.log(locationsArray)
   return (
   <div>
   <button onClick={() => setToggle((toggle) => toggle = true)}>Characters</button>
   <button onClick={() => setToggle((toggle) => toggle = false)}>Locations</button>
   {
-  toggle === true && characters !== "Loading..." ? <CharactersTable data={array.flat()} page={page} setPage={setPage}/> :
-  toggle === false && locations !== "Loading..." ? <Location data={locations.results}/> : 
+  toggle === true && characters !== "Loading..." ? <CharactersTable data={charactersArray.flat()} page={page} setPage={setPage}/> :
+  toggle === false && locations !== "Loading..." ? <LocationsTable data={locationsArray.flat()} page={page} setPage={setPage}/> : 
   <p>Loading</p>}
-  <button onClick={() => setPage((page) => page - 1)} disabled={page < 2}>Previous Page</button>
-  <button onClick={() => setPage((page) => page + 1)}>Next Page</button>
   </div>
   )
 }
