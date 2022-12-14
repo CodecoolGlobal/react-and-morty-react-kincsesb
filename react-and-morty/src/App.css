@@ -1,3 +1,9 @@
+body {
+    background-image: url("./image/background.jpg");
+    background-attachment: fixed;
+    background-position: 30% 7%; 
+}
+
 .charactersTable {
     display: grid;
     margin: 60px;
@@ -19,22 +25,62 @@
 }
 
 .character {
+    font-family: 'Russo One', sans-serif;
     width: 300px;
     display: block;
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: lightgrey;
+    color: white;
+    font-size: 17px;
+    background: rgba(46, 46, 46, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+    border: 1px solid rgba(255, 255, 255, 0.54);
 }
 
+.character_image {
+    border: 1px solid rgba(255, 255, 255, 0.54);
+    border-radius: 16px;
+}
+
+.moreinfo {
+    border-radius: 16px;
+    background-color: white;
+    color: black;
+    font-size: 13px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Russo One', sans-serif;
+    border: none;
+}
+
+.Button {
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Russo One', sans-serif;
+    border: none;
+    margin-right: 30px;
+}
 .location {
-    height: auto;
+    font-family: 'Russo One', sans-serif;
     width: 300px;
     display: block;
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: lightgrey;
+    color: white;
+    font-size: 17px;
+    background: rgba(46, 46, 46, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+    border: 1px solid rgba(255, 255, 255, 0.54);
 }
 .displayflex {
     display: block;
@@ -44,3 +90,84 @@
     display: none;
 }
 
+.firstSlide {
+    display: flex;
+    color: white;
+    margin-top: 0%;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+}
+
+#firstSlideImage {
+    float: right;
+    scale: 80%;
+}
+
+#firstSlideText {
+    float: left;
+    margin-top: 20%;
+}
+
+.secondSlide {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 0%;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+}
+
+#secondSlideText {
+    margin-top: 5%;
+}
+
+#secondSlideImage {
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-left: -10%;
+    display: flex;
+    scale: 70%;
+}
+
+.thirdSlide {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: -10%;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+}
+
+#thirdSlideImage {
+    scale: 80%;
+}
+
+#thirdSlideText {
+    font-size: 30px;
+    margin-right: 30px
+}
+
+.lastSlide {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 10%;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+}
+
+#lastImage{
+    scale: 120%;
+}
+
+#simplebackground{
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+}
