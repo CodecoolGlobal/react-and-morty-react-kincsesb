@@ -1,5 +1,5 @@
 .charactersTable {
-    display: grid;
+display: grid;
     margin: 60px;
     column-gap: 30px;
     row-gap: 30px;

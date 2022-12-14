@@ -20,7 +20,7 @@ function Character(props) {
 
     return (
         <div className="character">
-            <img src={image}></img>
+            <img className="character_image" src={image}></img>
             <h4>Name: {name}</h4>
             <p>Species: {species}</p>
             {/* <button onClick={() => setCount(!count)}>More Information</button>

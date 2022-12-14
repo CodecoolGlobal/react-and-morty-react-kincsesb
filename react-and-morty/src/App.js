@@ -46,7 +46,7 @@ function App() {
   console.log(locationsArray);
   return (
     <div>
-      {presentationPage < 4 ? (
+      {presentationPage < 5 ? (
         <Presentation
           presentationPage={presentationPage}
           setPresentationPage={setPresentationPage}
