@@ -23,7 +23,7 @@ const Presentation = ({presentationPage, setPresentationPage}) => {
             {presentationPage === 2 ? <Slide2 /> : null}
             {presentationPage === 3 ? <Slide3 /> : null}
             {presentationPage === 4 ? <Slide4 /> : null}
-            <button onClick={nextPage} className="presentation-button">Next slide</button>
+            <button onClick={nextPage} className="Button">Next slide</button>
         </div>
     )
 }

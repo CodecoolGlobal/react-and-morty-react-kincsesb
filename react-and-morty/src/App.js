@@ -52,31 +52,43 @@ function App() {
           setPresentationPage={setPresentationPage}
         />
       ) : (
-        <div>
-          <img className="logo-image" src={image} alt="" width="300" />
-          <br></br>
-          <button onClick={() => setToggle((toggle) => (toggle = true))}>
-            Characters
-          </button>
-          <button onClick={() => setToggle((toggle) => (toggle = false))}>
-            Locations
-          </button>
-          {toggle === null ? <LandingPage /> : null}
-          {toggle === true && characters !== "Loading..." ? (
-            <CharactersTable
-              data={charactersArray.flat()}
-              page={page}
-              setPage={setPage}
-            />
-          ) : toggle === false && locations !== "Loading..." ? (
-            <LocationsTable
-              data={locationsArray.flat()}
-              page={page}
-              setPage={setPage}
-            />
-          ) : (
-            <p>Loading</p>
-          )}
+        <div id="simplebackground">
+          <div className="navigation">
+            <img className="logo-image" src={image} alt="" width="150" />
+            <br></br>
+            <div className="navigation-buttons">
+              <button
+                className="Button"
+                onClick={() => setToggle((toggle) => (toggle = true))}
+              >
+                Characters
+              </button>
+              <button
+                className="Button"
+                onClick={() => setToggle((toggle) => (toggle = false))}
+              >
+                Locations
+              </button>
+            </div>
+          </div>
+          <div>
+            {toggle === null ? <LandingPage /> : null}
+            {toggle === true && characters !== "Loading..." ? (
+              <CharactersTable
+                data={charactersArray.flat()}
+                page={page}
+                setPage={setPage}
+              />
+            ) : toggle === false && locations !== "Loading..." ? (
+              <LocationsTable
+                data={locationsArray.flat()}
+                page={page}
+                setPage={setPage}
+              />
+            ) : (
+              <p>Loading</p>
+            )}
+          </div>
         </div>
       )}
     </div>
