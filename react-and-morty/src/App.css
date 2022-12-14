@@ -1,24 +1,13 @@
-#root {
-    background: rgba(0, 0, 0, 0.6);
-}
-
 body {
     background-image: url("./image/background.jpg");
     background-attachment: fixed;
     background-position: 30% 7%; 
-    background-size: cover;
-    margin: 0px;
-    height: 100%;
-    backdrop-filter: blur(4.2px);
-    -webkit-backdrop-filter: blur(4.2px);
 }
 
 .charactersTable {
     display: grid;
-    column-gap: 30px;
     margin: 60px;
-    padding-bottom: 120px;
-    margin-bottom: 0px;
+    column-gap: 30px;
     row-gap: 30px;
     grid-template-columns: repeat(4, 1fr);
     height: 1600px;
@@ -27,11 +16,9 @@ body {
 
 .locationsTable {
     display: grid;
-    column-gap: 30px;
     margin: 60px;
+    column-gap: 30px;
     row-gap: 30px;
-    padding-bottom: 120px;
-    margin-bottom: 0px;
     grid-template-columns: repeat(4, 1fr);
     height: 600px;
     overflow-y: auto;
@@ -158,7 +145,6 @@ body {
 
 #thirdSlideImage {
     scale: 80%;
-    margin-left: -5%;
 }
 
 #thirdSlideText {
@@ -177,6 +163,11 @@ body {
 }
 
 #lastImage{
-    margin-bottom: 80px;
     scale: 120%;
+}
+
+#simplebackground{
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
 }

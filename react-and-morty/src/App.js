@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-// import Presentation from "./components/Presentation";
+import Presentation from "./components/Presentation";
 
 import "./App.css";
 
@@ -59,7 +59,7 @@ function App() {
   <button className="Button" onClick={() => setToggle((toggle) => toggle = 1)}>Characters</button>
   <button className="Button" onClick={() => setToggle((toggle) => toggle = 2)}>Locations</button>
   {
-  // toggle === 0 ? <Presentation/> :
+  toggle === 0 ? <Presentation/> :
   toggle === 1 && characters !== "Loading..." ? <CharactersTable data={charactersArray.flat()} page={page} setPage={setPage}/> :
   toggle === 2 && locations !== "Loading..." ? <LocationsTable data={locationsArray.flat()} page={page} setPage={setPage}/> : 
   ""
