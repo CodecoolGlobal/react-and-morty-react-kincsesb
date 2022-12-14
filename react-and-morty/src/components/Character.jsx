@@ -1,11 +1,10 @@
 import React from "react";
+
 import { useState } from "react";
-import 'reactjs-popup/dist/index.css';
-import Popup from 'reactjs-popup';
 
 function Character(props) {
 
-    const [count, setCount] = useState(false)
+    const [count,setCount] = useState(false)
 
     let image = props.image
     let name = props.name
@@ -20,20 +19,20 @@ function Character(props) {
 
     return (
         <div className="character">
-            <img src={image}></img>
+            <img src={image} className="character_image"></img>
             <h4>Name: {name}</h4>
             <p>Species: {species}</p>
-            {/* <button onClick={() => setCount(!count)}>More Information</button>
-            <div className={count === false ? "displaynone" : "displayflex"}> */}
-            <Popup trigger={<button >More Information</button>} position="center">
+            <button onClick={() => setCount(!count)} className="moreinfo">More Information</button>
+            <div className={count === false ? "displaynone" : "displayflex"}>
+            {/* <Popup trigger={<button >More Information</button>} position="center"> */}
             <p>Location: {location}</p>
             <p>Status: {status}</p>
             <p>Gender: {gender}</p>
             <p>Oirgin: {origin}</p>
-            </Popup>
+            {/* </Popup> */}
             
             
-            {/* </div> */}
+            </div>
         </div>
     )
 }
