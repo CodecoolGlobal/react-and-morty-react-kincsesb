@@ -20,16 +20,25 @@ function Character(props) {
 
     return (
         <div className="character">
+
             <img className="character_image" src={image}></img>
             <h4>Name: {name}</h4>
+
             <p>Species: {species}</p>
             {/* <button onClick={() => setCount(!count)}>More Information</button>
             <div className={count === false ? "displaynone" : "displayflex"}> */}
-            <Popup trigger={<button >More Information</button>} position="center">
-            <p>Location: {location}</p>
-            <p>Status: {status}</p>
-            <p>Gender: {gender}</p>
-            <p>Oirgin: {origin}</p>
+            <Popup className={"popup"} trigger={<button >More Information</button>} position="center">
+            <div>
+                <img className="character-image"src={image} height="150px"></img>
+            </div>
+            <div className="character-details">
+                <h2 className="popup-title">{name}</h2>
+                <p className="character-info">Location: {location}</p>
+                <p className="character-info">Status: {status}</p>
+                <p className="character-info">Gender: {gender}</p>
+                <p className="character-info">Oirgin: {origin}</p>
+            </div>
+            
             </Popup>
             
             
