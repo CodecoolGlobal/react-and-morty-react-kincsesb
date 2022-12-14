@@ -20,6 +20,7 @@ function App() {
   const [locationsArray, setLocationsArray] = useState([]);
 
   const [presentationPage, setPresentationPage] = useState(1);
+  const [imageSize, setImageSize] = useState(350);
 
   const image = require("./rick-and-morty-slide1.png");
 
@@ -54,12 +55,15 @@ function App() {
       ) : (
         <div id="simplebackground">
           <div className="navigation">
-            <img className="logo-image" src={image} alt="" width="150" />
+            <img className="logo-image" src={image} alt="" width={imageSize} />
             <br></br>
             <div className="navigation-buttons">
               <button
                 className="Button"
-                onClick={() => setToggle((toggle) => (toggle = true))}
+                onClick={() => {
+                  setToggle((toggle) => (toggle = true));
+                  setImageSize(150);
+                }}
               >
                 Characters
               </button>

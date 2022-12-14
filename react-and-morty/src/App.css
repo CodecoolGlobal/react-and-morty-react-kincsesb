@@ -203,6 +203,7 @@ body {
 .landing-p{
     color: white;
     font-family: 'Russo One', sans-serif;
+    border: none;
     font-style: normal;
     font-size: 20px;
     text-align: center;
@@ -210,10 +211,87 @@ body {
 .presentation{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:flex-start;
+    
     background: rgba(0, 0, 0, 0.7);
+    background-image: url("./image/Morty.jpg");
+    
+    background-repeat: no-repeat;
+    background-position: center;
     backdrop-filter: blur(4.2px);
     -webkit-backdrop-filter: blur(4.2px);
     color: white;
     height: 100vh;
 }
+
+.slides{
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    background: yellow;
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+    height: 320px;
+    width: 600px;
+    padding-left: 50px;
+    padding-top: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 8px black;
+    font-family: 'Russo One', sans-serif;
+    border: none;
+    color:black;
+    animation: slide;
+    animation-duration: 40s;
+    border-color: grey;
+    border-width: 4px;
+    border-style:ridge;
+}
+
+.presentation-button{
+    margin-left: 100px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    box-shadow: 8px 8px 8px black;
+    font-family: 'Russo One', sans-serif;
+    border-color: grey;
+    border-width: 2px;
+    width: 200px
+}
+
+.presentation-h1{
+    font-size: 40px;
+}
+
+.presentation-h2{
+    font-family: 'Courier New', monospace;
+    font-size: 30px;
+}
+
+.presentation-h3{
+    font-family: 'Courier New', monospace;
+}
+
+.presentation-p{
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    padding-right: 20px;
+    padding: 0px;
+    margin: 2px;
+}
+
+@keyframes slide {
+    
+    0%  {background-color:yellow}
+    10%  {background-color:green}
+    20%  {background-color:yellow}
+    30% {background-color:red}
+    40%  {background-color:yellow}
+    50%  {background-color:green}
+    60%  {background-color:yellow}
+    70% {background-color:red}
+    80%  {background-color:yellow}
+    90%  {background-color:green}
+    100%  {background-color:yellow}
+  }

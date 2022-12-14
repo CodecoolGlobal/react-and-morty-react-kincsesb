@@ -13,7 +13,7 @@ code {
 }
 .popup-content {
   margin: auto;
-  background-image: linear-gradient(to bottom right, red , yellow);
+  background-image: linear-gradient(to bottom right, black , rgb(47, 175, 7));
   font-family: 'Courier New', monospace;
   font-size: 20px;
   display:flex;
@@ -32,7 +32,7 @@ code {
   width: 450px;
   box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 2px;
   border-radius: 10px;
-  border-color: rgb(47, 175, 7);
+  border-color: grey;
   border-width: 4px;
   border-style:ridge;
 }
