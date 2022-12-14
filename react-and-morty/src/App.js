@@ -69,7 +69,10 @@ function App() {
               </button>
               <button
                 className="Button"
-                onClick={() => setToggle((toggle) => (toggle = false))}
+                onClick={() => {
+                  setToggle((toggle) => (toggle = false));
+                  setImageSize(150);
+                }}
               >
                 Locations
               </button>
