@@ -66,6 +66,18 @@ body {
     border: none;
     margin-right: 30px;
 }
+
+.Button-info {
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Russo One', sans-serif;
+    border: none;
+    margin-bottom: 20px;
+}
+
 .location {
     font-family: 'Russo One', sans-serif;
     width: 300px;

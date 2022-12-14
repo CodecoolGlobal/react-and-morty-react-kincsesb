@@ -1,6 +1,7 @@
 import React from "react";
-
 import { useState } from "react";
+import 'reactjs-popup/dist/index.css';
+import Popup from 'reactjs-popup';
 
 function Character(props) {
 
@@ -19,21 +20,29 @@ function Character(props) {
 
     return (
         <div className="character">
-            <img src={image} className="character_image"></img>
+
+            <img className="character_image" src={image}></img>
             <h4>Name: {name}</h4>
+
             <p>Species: {species}</p>
-
-            
-            <Popup className={"popup"} trigger={<button >More Information</button>} position="center">
-
-            <p>Location: {location}</p>
-            <p>Status: {status}</p>
-            <p>Gender: {gender}</p>
-            <p>Oirgin: {origin}</p>
-            { </Popup> }
-            
-            
+            {/* <button onClick={() => setCount(!count)}>More Information</button>
+            <div className={count === false ? "displaynone" : "displayflex"}> */}
+            <Popup className={"popup"} trigger={<button className="Button-info">More Information</button>} position="center">
+            <div>
+                <img className="character-image"src={image} height="150px"></img>
             </div>
+            <div className="character-details">
+                <h2 className="popup-title">{name}</h2>
+                <p className="character-info">Location: {location}</p>
+                <p className="character-info">Status: {status}</p>
+                <p className="character-info">Gender: {gender}</p>
+                <p className="character-info">Oirgin: {origin}</p>
+            </div>
+            
+            </Popup>
+            
+            
+            {/* </div> */}
         </div>
     )
 }
