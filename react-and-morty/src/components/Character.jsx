@@ -20,8 +20,10 @@ function Character(props) {
 
     return (
         <div className="character">
-            <img src={image}></img>
-            <h4>{name}</h4>
+
+            <img className="character_image" src={image}></img>
+            <h4>Name: {name}</h4>
+
             <p>Species: {species}</p>
             {/* <button onClick={() => setCount(!count)}>More Information</button>
             <div className={count === false ? "displaynone" : "displayflex"}> */}
