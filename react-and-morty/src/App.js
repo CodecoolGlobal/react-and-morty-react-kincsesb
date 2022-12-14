@@ -1,39 +1,34 @@
 import React, { useEffect } from "react";
-
-import Presentation from "./components/Presentation";
-
 import "./App.css";
-
 import { useCharacters, useLocations } from "./api/useData";
-
 import CharactersTable from "./components/CharactersTable";
 import LocationsTable from "./components/LocationsTable";
-
+import Presentation from "./components/Presentation";
 import { useState } from "react";
+import image from "./rick-and-morty-slide1.png";
+import LandingPage from "./components/LandingPage";
 
 function App() {
+  const [page, setPage] = useState(1);
 
-  const [page,setPage] = useState(1)
-  
   const characters = useCharacters(page);
   const locations = useLocations(page);
 
-  const [toggle, setToggle] = useState(0)
+  const [toggle, setToggle] = useState(null);
 
+  const [charactersArray, setCharactersArray] = useState([]);
+  const [locationsArray, setLocationsArray] = useState([]);
 
-  const [charactersArray, setCharactersArray] = useState([])
-  const [locationsArray, setLocationsArray] = useState([])
+  const [presentationPage, setPresentationPage] = useState(1);
 
+  const image = require("./rick-and-morty-slide1.png");
 
   //console.log(characters)
 
   useEffect(() => {
     async function load() {
-
-      if(characters !== 'Loading...'){
-
-        setCharactersArray([...charactersArray,...characters.results])
-
+      if (characters !== "Loading...") {
+        setCharactersArray([...charactersArray, ...characters.results]);
       }
     }
     load();
@@ -41,31 +36,51 @@ function App() {
 
   useEffect(() => {
     async function load() {
-
-      if(locations !== 'Loading...'){
-
-        setLocationsArray([...locationsArray,...locations.results])
-
+      if (locations !== "Loading...") {
+        setLocationsArray([...locationsArray, ...locations.results]);
       }
     }
     load();
   }, [locations]);
 
-  console.log(locationsArray)
-
+  console.log(locationsArray);
   return (
-  <div id="simplebackground">
-  <button className="Button" onClick={() => setToggle((toggle) => toggle = 0)}>Presentation</button>
-  <button className="Button" onClick={() => setToggle((toggle) => toggle = 1)}>Characters</button>
-  <button className="Button" onClick={() => setToggle((toggle) => toggle = 2)}>Locations</button>
-  {
-  toggle === 0 ? <Presentation/> :
-  toggle === 1 && characters !== "Loading..." ? <CharactersTable data={charactersArray.flat()} page={page} setPage={setPage}/> :
-  toggle === 2 && locations !== "Loading..." ? <LocationsTable data={locationsArray.flat()} page={page} setPage={setPage}/> : 
-  ""
-  }
-  </div>
-  )
+    <div>
+      {presentationPage < 5 ? (
+        <Presentation
+          presentationPage={presentationPage}
+          setPresentationPage={setPresentationPage}
+        />
+      ) : (
+        <div>
+          <img className="logo-image" src={image} alt="" width="300" />
+          <br></br>
+          <button onClick={() => setToggle((toggle) => (toggle = true))}>
+            Characters
+          </button>
+          <button onClick={() => setToggle((toggle) => (toggle = false))}>
+            Locations
+          </button>
+          {toggle === null ? <LandingPage /> : null}
+          {toggle === true && characters !== "Loading..." ? (
+            <CharactersTable
+              data={charactersArray.flat()}
+              page={page}
+              setPage={setPage}
+            />
+          ) : toggle === false && locations !== "Loading..." ? (
+            <LocationsTable
+              data={locationsArray.flat()}
+              page={page}
+              setPage={setPage}
+            />
+          ) : (
+            <p>Loading</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
