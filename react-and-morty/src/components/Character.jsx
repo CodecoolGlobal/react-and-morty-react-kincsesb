@@ -16,15 +16,14 @@ function Character(props) {
     let status = props.status
     let gender = props.gender
     let origin = props.origin.name
-
+  
 
     return (
         <div className="character">
             <img src={image}></img>
             <h4>Name: {name}</h4>
             <p>Species: {species}</p>
-            {/* <button onClick={() => setCount(!count)}>More Information</button>
-            <div className={count === false ? "displaynone" : "displayflex"}> */}
+            
             <Popup className={"popup"} trigger={<button >More Information</button>} position="center">
             <p>Location: {location}</p>
             <p>Status: {status}</p>
